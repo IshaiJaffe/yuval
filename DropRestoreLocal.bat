@@ -1,0 +1,1 @@
+Scripts\mongorestore.exe --drop --filter "{ name : { $ne : '_id_' } }" -d CMS dump\CMS

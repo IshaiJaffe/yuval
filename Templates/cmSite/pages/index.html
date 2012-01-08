@@ -1,0 +1,12 @@
+<h1>Articles</h1>
+{% if latest_article %}
+    <ul>
+    {% for pageCMS in latest_article %}
+        <li><a href="/sites/{{ pageCMS.id }}/">{{ pageCMS.paraName }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No available articles.</p>
+{% endif %}
+        
+<a href="./add/">New Article</a>
