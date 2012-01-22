@@ -1,4 +1,73 @@
-<h1>Articles</h1>
+{% extends 'cmSite/base.html' %}
+{% block extra_head %}
+<script>
+    homeGallery = {
+        currentIndex : 0,
+        count: 0,
+        waitTime : 5000,
+        animateTime : 2000,
+        timeout : function() {},
+        init: function () {
+            $homeImages = $('#homeImages');
+            $channelControls = $('#channelControls');
+            homeGallery.count = $('li', $homeImages).length;
+
+            $('li', $homeImages).css({opacity: 0, 'z-index' : 1});
+            $('li:eq(0)', $homeImages).css({opacity: 1, 'z-index' : 1});
+
+            setTimeout(function() {
+                $('a:eq('+(homeGallery.currentIndex+1)+')', $channelControls).click();
+            }, homeGallery.waitTime*2);
+            homeGallery.enableControls();
+        },
+        disableControls: function() {
+            $('a', $channelControls).unbind('click').click(function(e) {e.preventDefault();});
+        },
+        enableControls: function() {
+            $('a', $channelControls).click(function(e) {
+                clearTimeout(homeGallery.timeout);
+                e.preventDefault();
+                homeGallery.disableControls();
+                homeGallery.show($('a', $channelControls).index($(this)));
+            });
+        },
+        show : function(index) {
+            homeGallery.disableControls();
+            homeGallery.currentIndex = index;
+            $selectedImage = $('li.selected', $homeImages);
+            $('a', $channelControls).removeClass('selected');
+            $('a:eq('+index+')', $channelControls).addClass('selected');
+            $selectedImage.stop(true, true).css({'z-index' : 2, opacity: 1}).removeClass('selected');
+            $('li:eq('+index+')', $homeImages).addClass('selected').css({'z-index' : 10, opacity: 0}).animate({opacity: 1}, {
+                duration: homeGallery.animateTimeout,
+                easing: 'swing',
+                queue: false,
+                complete: function() {
+                    homeGallery.enableControls();
+                    homeGallery.currentIndex = index;
+                    $selectedImage.css({'z-index': 1, opacity: 0});
+                    $('li:eq('+index+')', $homeImages).css({'z-index': 1});
+                    homeGallery.timeout = setTimeout('homeGallery.slideShow()', homeGallery.waitTime);
+                }
+            });
+        },
+        slideShow: function() {
+            if(homeGallery.currentIndex == (homeGallery.count-1)) {
+                homeGallery.show(0);
+            } else {
+                homeGallery.show(homeGallery.currentIndex+1);
+            }
+        }
+    }
+
+    $(document).ready(function() {
+        homeGallery.init();
+    });
+</script>
+{% endblock %}
+
+{% block content %}
+<h1>מאמרים</h1>
 {% if latest_article %}
     <ul>
     {% for pageCMS in latest_article %}
@@ -8,5 +77,37 @@
 {% else %}
     <p>No available articles.</p>
 {% endif %}
-        
 <a href="./add/">New Article</a>
+
+<div id="homeImages" class="visual">
+    <ul class="homeSlides">
+        <li style="opacity: 0; z-index: 1;" class="">
+            <img height="435" width="980" alt="Bird RGB 980x435 72dpi" src="admin-resources/image-tools.php?w=980&amp;h=435&amp;c=1&amp;q=100&amp;src=/home/new/Bird_RGB_980x435_72dpi.jpg">
+        </li>
+        <li style="opacity: 0; z-index: 1;" class="">
+            <img height="435" width="980" alt="Giraffe1 RGB 980x435 72dpi" src="admin-resources/image-tools.php?w=980&amp;h=435&amp;c=1&amp;q=100&amp;src=/home/new/Giraffe1_RGB_980x435_72dpi.jpg">
+        </li>
+        <li style="opacity: 0; z-index: 1;" class="">
+            <img height="435" width="980" alt="Zebra in street 980x435 72dpi LR" src="admin-resources/image-tools.php?w=980&amp;h=435&amp;c=1&amp;q=100&amp;src=/home/new/Zebra_in_street_980x435_72dpi_LR.jpg">
+        </li>
+        <li style="opacity: 1; z-index: 1;" class="selected">
+            <img height="435" width="980" alt="Camel RGB 980x435 72dpi" src="admin-resources/image-tools.php?w=980&amp;h=435&amp;c=1&amp;q=100&amp;src=/home/new/Camel_RGB_980x435_72dpi.jpg">
+        </li>
+        <li style="opacity: 0; z-index: 1;" class="">
+            <img height="435" width="980" alt="Giraffe RGB 980x435 72dpi" src="admin-resources/image-tools.php?w=980&amp;h=435&amp;c=1&amp;q=100&amp;src=/home/new/Giraffe_RGB__980x435_72dpi.jpg">
+        </li>
+        <li style="opacity: 0; z-index: 1;" class="">
+            <img height="435" width="980" alt="Zebra RGB 980x435 72dpi" src="admin-resources/image-tools.php?w=980&amp;h=435&amp;c=1&amp;q=100&amp;src=/home/new/Zebra_RGB_980x435_72dpi.jpg">
+        </li>
+    </ul>
+    <div id="channelControls">
+        <a href="1" class=""></a>
+        <a href="2" class=""></a>
+        <a href="3" class=""></a>
+        <a href="4" class="selected"></a>
+        <a href="5" class=""></a>
+        <a href="6" class=""></a>
+    </div>
+</div>
+
+{% endblock %}
