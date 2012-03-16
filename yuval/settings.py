@@ -9,7 +9,7 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-CODE_ROOT = ''
+CODE_ROOT = os.path.dirname(os.path.realpath(__file__))
 
 DATABASES = {
     'default': {
