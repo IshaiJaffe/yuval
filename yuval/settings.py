@@ -70,6 +70,8 @@ STATIC_URL = '/static/'
 # Examples: "http://foo.com/static/admin/", "/static/admin/".
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 
+UPLOADED_IMAGES = os.path.join(CODE_ROOT, 'uploaded_media', 'images')
+
 # Additional locations of static files
 STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
@@ -171,3 +173,10 @@ EMAIL_USE_TLS = True
 SERVER_EMAIL = EMAIL_HOST_USER
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+#Storage
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+AWS_ACCESS_KEY_ID = 'AKIAIK5YCK53XZM33RPA'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'geneg-genomes'
+
