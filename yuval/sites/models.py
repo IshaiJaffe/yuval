@@ -67,6 +67,7 @@ class GalleryImage(models.Model):
 
     @staticmethod
     def get_images():
+        global cached_images
         if not cached_images:
             cached_images = GalleryImage.objects.all(use=True).order_by('ordinal')
         return cached_images
