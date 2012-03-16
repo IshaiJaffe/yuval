@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div id="content">
+    <div id="slideDiv">
+        <div class="sd_images">
+            {% for image in images %}
+                <span><img src="{{ image.image.url }}" alt="{{ image.title }}" title="{{ image.title }}"
+                           id="wows{{ forloop.counter0 }}"/></span>
+            {% endfor %}
+        </div>
+        <div class="bullets"><div>
+            {% for image in images %}
+                <a href="#wows{{ forloop.counter0 }}" title="{{ image.title }}">{{ forloop.counter }}</a>
+            {% endfor %}
+        </div></div>
+    </div>
+</div>
+{% endblock %}
+{% block bottom_head %}
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/script.js"></script>
+{% endblock %}

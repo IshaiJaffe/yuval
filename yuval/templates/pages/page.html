@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div id="content-inner">
+        <div class="leftbar" dir="rtl">
+            <p class="heading">{{ page.subHeader }}<br />
+            <p> {{ page.para|safe }} </p>
+        </div>
+    </div>
+    <div class="imgbar"><img src="{{ page.photo.url }}" alt="img" /></div>
+{% endblock %}

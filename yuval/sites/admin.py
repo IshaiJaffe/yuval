@@ -1,5 +1,5 @@
 __author__ = 'voskov'
-from sites.models import pageCMS
+from sites.models import pageCMS, GalleryImage
 from django.contrib import admin
 
 class pageAdmin(admin.ModelAdmin):
@@ -10,3 +10,5 @@ class pageAdmin(admin.ModelAdmin):
 
 
 admin.site.register(pageCMS, pageAdmin)
+
+admin.site.register(GalleryImage)

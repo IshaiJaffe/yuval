@@ -7,7 +7,6 @@ import settings
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^sites/$', 'sites.views.index'),
     url(r'^sites/(?P<pageCMS_id>\d+)/$', 'sites.views.detail'),
     url(r'^sites/add/$', 'sites.views.add'),
 
@@ -17,4 +16,7 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
+    url(r'^me$', 'sites.views.me'),
+    url(r'^page/(?P<page_name>\w+)$', 'sites.views.page'),
+    url(r'', 'sites.views.index'),
 )
