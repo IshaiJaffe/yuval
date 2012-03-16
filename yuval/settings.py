@@ -9,7 +9,7 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-CODE_ROOT = '/yuval'
+CODE_ROOT = '/'
 
 DATABASES = {
     'default': {
