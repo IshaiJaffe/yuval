@@ -4,7 +4,6 @@ from django.contrib import admin
 
 class pageAdmin(admin.ModelAdmin):
     fieldsets = [
-        ('Date information', {'fields': ['pub_date']}),
         ('Article', {'fields': ['paraName', 'header', 'subHeader', 'para', 'photo']})
     ]
 
