@@ -18,7 +18,7 @@ def clear_cache():
     cached_images = None
 
 class pageCMS(models.Model):
-    paraName = models.CharField('name', max_length=100,verbose_name='Url path')
+    paraName = models.CharField('name', max_length=100)
     header = models.CharField('Header', max_length=100)
     subHeader = models.CharField('Sub Header', max_length=1000)
     para = models.TextField('paragraph',max_length=4000)
