@@ -1,2 +1,2 @@
 django
-postgresql
+py-postgresql
