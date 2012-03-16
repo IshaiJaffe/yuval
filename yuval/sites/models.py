@@ -9,6 +9,13 @@ def get_last_ordinal_page():
 
 cached_pages = None
 cached_pages_dict = {}
+cached_images = None
+
+def clear_cache():
+    global cached_pages, cached_pages_dict, cached_images
+    cached_pages = None
+    cached_pages_dict = {}
+    cached_images = None
 
 class pageCMS(models.Model):
     paraName = models.CharField('name', max_length=100)
@@ -19,6 +26,10 @@ class pageCMS(models.Model):
     photo = models.FileField('photo', upload_to='photos')
     use = models.BooleanField(default=True)
     ordinal = models.FloatField(default=get_last_ordinal_page)
+
+    def save(self, *args,**kwargs):
+        clear_cache()
+        super(pageCMS,self).save(*args,**kwargs)
 
     def __unicode__(self):
         return self.paraName
@@ -49,3 +60,13 @@ class GalleryImage(models.Model):
     title = models.TextField(default='')
     use = models.BooleanField(default=True)
     ordinal = models.FloatField(default=get_last_ordinal)
+
+    def save(self, *args,**kwargs):
+        clear_cache()
+        super(GalleryImage,self).save(*args,**kwargs)
+
+    @staticmethod
+    def get_images():
+        if not cached_images:
+            cached_images = GalleryImage.objects.all(use=True).order_by('ordinal')
+        return cached_images

@@ -7,7 +7,7 @@ from django.http import *
 
 def index(request):
 #    latest_article = pageCMS.objects.all().order_by('-pub_date')[:5]
-    images = GalleryImage.objects.filter(use=True).order_by('ordinal')
+    images = GalleryImage.get_images()# .objects.filter(use=True).order_by('ordinal')
     return render_to_response('pages/gallery.html', context_instance=RequestContext(request,
             {
          #   'latest_article': latest_article,
