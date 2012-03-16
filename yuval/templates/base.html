@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>יובל יפה | יעוץ הנקה</title>
+    <link href="{{ MEDIA_URL }}css/code.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/slider.js"></script>
+    {% block extra_head %}
+    {% endblock %}
+</head>
+
+<body>
+<!--container start-->
+<div id="container">
+    <!--header start-->
+    <div id="header">
+        <h1 dir='rtl'>
+            יובל יפה מושקוביץ אחות מוסמכת B.D.S ומדריכת הנקה
+        </h1>
+        <h2 >	<a style="text-decoration: none; color: #6788B2;" href="mailto:uvjaffe@gmail.com">uvjaffe@gmail.com</a>  &nbsp;&nbsp;   050-8455242 &nbsp;&nbsp;&nbsp;  ייעוצי הנקה פרטיים בבית היולדת בקיסריה והסביבה </</h2>
+    </div><!--header end-->
+    <!--menu start-->
+    <div id="menu">
+        <ul>
+            <li dir='rtl'><a href="/" {% if page_link == 'home' %}class="current"{% endif %}
+                    >דף הבית</a></li>
+            <li dir='rtl'><a href="/me" {% if page_link == 'me' %}class="current"{% endif %}
+                    >מי אני?</a></li>
+            {% for p in pages %}
+                <li dir='rtl'><a href="/page/{{ p.link }}" {% if page_link == p.link %}class="current"{% endif %}>
+                {{ p.header }}
+                </a></li>
+            {% endfor %}
+        </ul>
+    </div><!--menu end-->
+        {% block content %}
+        {% endblock %}
+</div>
+<!--container end-->
+{% block bottom_head %}
+{% endblock %}
+</body>
+</html>
