@@ -69,5 +69,5 @@ class GalleryImage(models.Model):
     def get_images():
         global cached_images
         if not cached_images:
-            cached_images = GalleryImage.objects.all(use=True).order_by('ordinal')
+            cached_images = GalleryImage.objects.filter(use=True).order_by('ordinal')
         return cached_images
