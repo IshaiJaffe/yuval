@@ -11,6 +11,7 @@
 </head>
 
 <body>
+{% if locale != 'he' %}
 <script type="text/javascript">
     document.body.style.display = 'none';
     var _bab = _bab || {};
@@ -22,7 +23,9 @@
         bab.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'bablic.herokuapp.com/js/bablic.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(bab, s);
      })();
-</script><!--container start-->
+</script>
+{% endif %}
+<!--container start-->
 <div id="container">
     <!--header start-->
     <div id="header">
