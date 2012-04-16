@@ -31,6 +31,10 @@ class pageCMS(models.Model):
         clear_cache()
         super(pageCMS,self).save(*args,**kwargs)
 
+    def delete(self, using=None):
+        clear_cache()
+        return super(pageCMS,self).delete(using)
+
     def __unicode__(self):
         return self.paraName
 
@@ -64,6 +68,14 @@ class GalleryImage(models.Model):
     def save(self, *args,**kwargs):
         clear_cache()
         super(GalleryImage,self).save(*args,**kwargs)
+
+
+    def delete(self, using=None):
+        clear_cache()
+        return super(GalleryImage,self).delete(using)
+
+    def __unicode__(self):
+        return self.title
 
     @staticmethod
     def get_images():

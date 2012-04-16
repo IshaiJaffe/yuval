@@ -56,9 +56,9 @@ h6 { font-size:12px; color:#fff; padding:0px; margin:0px; }
 
 /*inner page css start*/
 #content-inner{width:100%;}
-.leftbar{width:57%; height:405px; float:left; background: url(../images/leftbar-bg.png) repeat; padding:10px 20px; text-align:right; line-height:25px; }
+.leftbar{width:57%; height:405px; overflow-y: scroll; float:left; background: url(../images/leftbar-bg.png) repeat; padding:10px 20px; text-align:right; line-height:25px; }
 .imgbar{width:37%;float:right;}
-.imgbar img{ border:2px #cd9bd3 solid; padding:4px}
+.imgbar img{ border:2px #cd9bd3 solid; padding:4px; max-width: 334px; }
 .heading{color:#7d1372; font-weight:bold; font-size:22px; padding-bottom:28px; line-height:26px!important;}
 
 /*inner page css end*/
