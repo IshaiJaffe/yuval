@@ -27,6 +27,11 @@ class pageCMS(models.Model):
     use = models.BooleanField(default=True)
     ordinal = models.FloatField(default=get_last_ordinal_page)
 
+    def image_url(self):
+        if self.photo and self.photo.url:
+            return 'http' + self.photo.url.split('https')[1].split('?')[0]
+        return ''
+
     def save(self, *args,**kwargs):
         clear_cache()
         super(pageCMS,self).save(*args,**kwargs)
@@ -64,6 +69,11 @@ class GalleryImage(models.Model):
     title = models.TextField(default='')
     use = models.BooleanField(default=True)
     ordinal = models.FloatField(default=get_last_ordinal)
+
+    def image_url(self):
+        if self.image and self.image.url:
+            return 'http' + self.image.url.split('https')[1].split('?')[0]
+        return ''
 
     def save(self, *args,**kwargs):
         clear_cache()

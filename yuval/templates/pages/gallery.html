@@ -4,7 +4,7 @@
     <div id="slideDiv">
         <div class="sd_images">
             {% for image in images %}
-                <span><img src="{{ image.image.url }}" alt="{{ image.title }}" title="{{ image.title }}"
+                <span><img src="{{ image.image_url }}" alt="{{ image.title }}" title="{{ image.title }}"
                            id="wows{{ forloop.counter0 }}"/></span>
             {% endfor %}
         </div>
