@@ -4,7 +4,7 @@ from django.contrib import admin
 
 class pageAdmin(admin.ModelAdmin):
     fieldsets = [
-        ('Article', {'fields': ['paraName', 'header', 'subHeader', 'para', 'photo' 'ordinal']})
+        ('Article', {'fields': ['paraName', 'header', 'subHeader', 'para', 'photo','ordinal']})
     ]
 
 

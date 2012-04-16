@@ -39,8 +39,6 @@
         <ul>
             <li dir='rtl'><a href="/" {% if page_link == 'home' %}class="current"{% endif %}
                     >דף הבית</a></li>
-            <li dir='rtl'><a href="/me" {% if page_link == 'me' %}class="current"{% endif %}
-                    >מי אני?</a></li>
             {% for p in pages %}
                 <li dir='rtl'><a href="/page/{{ p.link }}" {% if page_link == p.link %}class="current"{% endif %}>
                 {{ p.header }}
