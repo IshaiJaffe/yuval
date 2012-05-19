@@ -73,3 +73,15 @@ h6 { font-size:13px; color:#fff; padding:0px; margin:0px; }
     max-width:617px;
     max-height:413px;
 }
+
+.credit{
+    position: absolute;
+    right: 34px;
+    bottom: 2px;
+    font-size:12px;
+}
+.credit a,.credit a:hover,.credit a:visited
+{
+    text-decoration: none;
+    color: #7d1372;
+}
