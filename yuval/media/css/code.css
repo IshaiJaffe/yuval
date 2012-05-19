@@ -63,9 +63,10 @@ h6 { font-size:13px; color:#fff; padding:0px; margin:0px; }
 
 /*inner page css end*/
 
-.sd_images div{
+.sd_images span{
     width:896px;
     height:413px;
+    text-align:center;
 }
 
 .sd_images img{
