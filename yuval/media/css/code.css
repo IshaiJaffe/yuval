@@ -63,6 +63,11 @@ h6 { font-size:12px; color:#fff; padding:0px; margin:0px; }
 
 /*inner page css end*/
 
+.sd_images div{
+    width:896px;
+    height:413px;
+}
+
 .sd_images img{
     max-width:896px;
     max-height:413px;
