@@ -4,8 +4,8 @@
     <div id="slideDiv">
         <div class="sd_images">
             {% for image in images %}
-                <span><img style="max-width:896px;" src="{{ image.image_url }}" alt="{{ image.title }}" title="{{ image.title }}"
-                           id="wows{{ forloop.counter0 }}"/></span>
+                <div><img style="max-width:896px;" src="{{ image.image_url }}" alt="{{ image.title }}" title="{{ image.title }}"
+                           id="wows{{ forloop.counter0 }}"/></div>
             {% endfor %}
         </div>
         <div class="bullets"><div>
