@@ -13,4 +13,4 @@ function ws_basic(b, a, f) {
     }
 }
 ;// -----------------------------------------------------------------------------------
-jQuery("#slideDiv").wowSlider({effect:"basic", prev:"", next:"", duration:60 * 100, delay:60 * 100, outWidth:896, outHeight:413, width:896, height:413, autoPlay:true, stopOnHover:false, loop:true, bullets:true, caption:false, controls:false});
+jQuery("#slideDiv").wowSlider({effect:"basic", prev:"", next:"", duration:160 * 100, delay:160 * 100, outWidth:617, outHeight:413, width:617, height:413, autoPlay:true, stopOnHover:false, loop:true, bullets:true, caption:false, controls:false});
