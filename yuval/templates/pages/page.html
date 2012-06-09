@@ -4,7 +4,10 @@
 <script>
     $(function(){
         $('.imgbar img').load(function(){
-            $('.leftbar').css({height:$(this).outerHeight() - 20});
+            var height = $(this).outerHeight() - 20;
+            var leftbar = $('.leftbar');
+            if(height > leftbar.height())
+                leftbar.css({height:height});
         }).load();
     });
 </script>
