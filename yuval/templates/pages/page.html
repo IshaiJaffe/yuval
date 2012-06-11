@@ -8,6 +8,8 @@
             var leftbar = $('.leftbar');
             if(height > leftbar.height())
                 leftbar.css({height:height});
+            if(height> 425)
+                $('.imgbar').css({height:height});
         }).load();
     });
 </script>
@@ -21,6 +23,6 @@
                 <p> {{ page.para|safe }} </p>
             </div>
         </div>
-        <div class="imgbar"><img src="{{ page.image_url }}" alt="img" /></div>
+        <div class="imgbar" style="height:425px;"><img src="{{ page.image_url }}" alt="img" /></div>
     </div>
 {% endblock %}
