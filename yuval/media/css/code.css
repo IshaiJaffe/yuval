@@ -76,7 +76,21 @@ h6 { font-size:13px; color:#fff; padding:0px; margin:0px; }
 
 footer{width:100%; text-align: center; }
 
-footer ul li { float:right; }
+footer ul li {
+    border-right: 1px solid #666;
+    display: inline;
+    list-style: none outside none;
+    margin-left: 0;
+    margin-right: 5px;
+    padding-left: 0;
+    padding-right: 5px;
+}
+
+footer ul {
+    list-style: none outside none;
+    margin: 0 0 3px;
+    padding: 0;
+}
 
 .credit{
     font-size:12px;
