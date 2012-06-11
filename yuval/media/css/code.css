@@ -76,6 +76,8 @@ h6 { font-size:13px; color:#fff; padding:0px; margin:0px; }
 
 footer{width:100%; text-align: center; }
 
+footer ul li { float:right; }
+
 .credit{
     font-size:12px;
 }
