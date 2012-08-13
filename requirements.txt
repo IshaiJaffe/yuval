@@ -1,1 +1,6 @@
 pymongo
+django
+psycopg2
+PIL
+django-storages
+boto

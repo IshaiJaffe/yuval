@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* CSS Document */
+
+body { margin:0px; padding:0px;  font-size:12px; text-align:left; color:#14031b; font-family: "gisha"; background:url(../images/bg.gif) #e6ebf1 center top no-repeat; }
+img { border:0px; margin:0px; padding:0px; }
+p { margin:0px 0px; }
+hr { color:#aeaeae; height:1px; }
+br { margin:0px; padding:0px; }
+/*h tag start*/
+h1 { font-weight:normal; color:#6d7886; padding:34px 0px 24px 0px; margin:0px; font-size:30px; text-align:center;}
+h2 { color:#6788b2; font-size:21px; font-weight:bold; padding:0px;  margin:0px; text-align:center;}
+h3 { font-size:24px; color:#222; padding:10px 0px; margin:0px; font-weight:normal;  font-family: "Helvetica Neue"; border-bottom:1px #7f7f7f solid;}
+h4 { font-size:16px; color:#222; padding:10px 0px; margin:0px; font-weight:normal;  font-family: "Helvetica Neue"; }
+h5 { font-size:13px; color:#222; padding:10px; margin:0px; text-transform:uppercase;}
+h6 { font-size:12px; color:#fff; padding:0px; margin:0px; }
+/*h tag end*/
+
+@font-face 
+{ font-family: "gisha";
+ src:url("../font/gisha.ttf");
+ 
+ 
+ }
+@font-face 
+{font-family: "Helvetica Neue";
+ src:url("../font/helr45w.ttf");}
+
+/*container start*/
+#container { width:911px; margin:0px auto;}
+#header{width:100%;}
+
+/*menu start*/
+#menu{width:100%; overflow:hidden; margin:64px 0px 10px 0px;}
+#menu ul{display:inline; -webkit-margin-before: 0px; -webkit-margin-after: 0px; -webkit-padding-start: 0px;}
+#menu ul li{float:right; list-style:none; padding:8px 30px;}
+#menu ul li a{text-decoration:none; font-size:20px; font-weight:normal; color:#596e88;}
+#menu ul li a:hover{color:#7d1372; text-decoration:none;}
+.current{color:#7d1372!important;}
+/*menu end*/
+/*content start*/
+#content{width:907px; border:2px #cd9bd3 solid; padding:4px 0px;}
+/*slider start*/
+#slideDiv .bullets { bottom: 6px; right: 18px; }
+#slideDiv {position: relative; width:896px; height:413px; margin:0 auto; z-index:100; background-image: none; }
+#slideDiv .sd_images { position: absolute; left:0px; top:0px; width:896px; height:413px; overflow:hidden; }
+#slideDiv .sd_images a { color:transparent; }
+#slideDiv .sd_images img { top:0; left:0; border:none 0; max-width: none; }
+#slideDiv a { text-decoration: none; outline: none; border: none; }
+#slideDiv .bullets { font-size: 0px; padding: 10px; float: left; position:absolute; z-index:70; }
+#slideDiv .bullets div { position:relative; float:left; }
+#slideDiv .bullets a { width:15px; height:18px; background: url(../images/bullet.png) left top; float: left; text-indent: -1000px; position:relative; margin-left:5px; color:transparent; }
+#slideDiv .bullets a:hover { background-position: 0 102%; }
+#slideDiv .bullets a.sd_selbull { background-position: 0 102%; }
+/*slider end*/
+/*content end*/
+
+/*inner page css start*/
+#content-inner{width:100%;}
+.leftbar{width:57%; height:405px; overflow-y: scroll; float:left; background: url(../images/leftbar-bg.png) repeat; padding:10px 20px; text-align:right; line-height:25px; }
+.imgbar{width:37%;float:right;}
+.imgbar img{ border:2px #cd9bd3 solid; padding:4px; max-width: 334px; }
+.heading{color:#7d1372; font-weight:bold; font-size:22px; padding-bottom:28px; line-height:26px!important;}
+
+/*inner page css end*/
