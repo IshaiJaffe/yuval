@@ -2,7 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>יובל יפה | יעוץ הנקה</title>
+    <meta http-equiv="Content-Language" content="he">
+    <meta name="description" content="    יובל יפה מושקוביץ     אחות מוסמכת B.S.N ומדריכת הנקה
+ייעוצי הנקה פרטיים בבית היולדת בקיסריה והסביבה
+    ">
+    <meta name="keywords" content="ייעוץ הנקהת, הכנה להנקה, מדריכת הנקה, קיסריה, חדרה, אור עקיבא, חוף הכרמל, פרדס חנה, בנימינה, זכרון יעקב">
+    <link rel="icon" type="image/x-icon" href="{{ MEDIA_URL }}/favicon.ico" />
+    <title>יעוץ הנקה</title>
     <link href="{{ MEDIA_URL }}css/code.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.js"></script>
     <script type="text/javascript" src="{{ MEDIA_URL }}js/slider.js"></script>
@@ -71,10 +77,17 @@
     <!--menu start-->
     <div id="menu" style="width:1100px; position:relative; right:-70px;">
         <ul>
-            <li dir='rtl'><a href="/" {% if page_link == 'home' %}class="current"{% endif %}
-                    >דף הבית</a></li>
+
             {% for p in pages %}
-                <li dir='rtl'><a href="/page/{{ p.link }}" {% if page_link == p.link %}class="current"{% endif %}>
+				{% if forloop.last %}
+					<li dir='rtl'>
+					<a href="/gallery/" {% if page_link == 'gallery' %}class="current"{% endif %}                    >
+					גלריה
+					</a>
+					</li>
+
+				{% endif %}			
+                <li dir='rtl'><a href="{% if page_link == 'consultation' %}/{% else %}/page/{{ p.link }}{% endif %}" {% if page_link == p.link %}class="current"{% endif %}>
                 {{ p.header }}
                 </a></li>
             {% endfor %}

@@ -29,7 +29,7 @@ class pageCMS(models.Model):
 
     def image_url(self):
         if self.photo and self.photo.url:
-            return 'http' + self.photo.url.split('https')[1].split('?')[0]
+            return 'http' + self.photo.url.split('https')[-1].split('?')[0]
         return ''
 
     def save(self, *args,**kwargs):
@@ -72,7 +72,7 @@ class GalleryImage(models.Model):
 
     def image_url(self):
         if self.image and self.image.url:
-            return 'http' + self.image.url.split('https')[1].split('?')[0]
+            return 'http' + self.image.url.split('https')[-1].split('?')[0]
         return ''
 
     def save(self, *args,**kwargs):

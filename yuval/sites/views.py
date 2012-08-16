@@ -6,13 +6,16 @@ from django.http import *
 
 
 def index(request):
-#    latest_article = pageCMS.objects.all().order_by('-pub_date')[:5]
+    page = pageCMS.get_page('consultation')
+    return render_to_response('pages/page.html',context_instance=RequestContext(request,{'page':page,'page_link':page.paraName}))
+
+def gallery(request):
     images = GalleryImage.get_images()# .objects.filter(use=True).order_by('ordinal')
     return render_to_response('pages/gallery.html', context_instance=RequestContext(request,
             {
          #   'latest_article': latest_article,
              'images':images,
-             'page_link':'home'
+             'page_link':'gallery'
         }))
 def me(request):
     return render_to_response('pages/me.html', context_instance=RequestContext(request,
