@@ -87,7 +87,7 @@
 					</li>
 
 				{% endif %}			
-                <li dir='rtl'><a href="{% if page_link == 'consultation' %}/{% else %}/page/{{ p.link }}{% endif %}" {% if page_link == p.link %}class="current"{% endif %}>
+                <li dir='rtl'><a href="{% if p.link == 'consultation' %}/{% else %}/page/{{ p.link }}{% endif %}" {% if page_link == p.link %}class="current"{% endif %}>
                 {{ p.header }}
                 </a></li>
             {% endfor %}
