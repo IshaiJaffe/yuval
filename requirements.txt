@@ -1,3 +1,4 @@
+pymongo
 django
 psycopg2
 PIL
