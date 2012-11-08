@@ -48,7 +48,7 @@
   })();
 
 </script>
-{{ BABLIC_SNIPPET }}
+{{ BABLIC_SNIPPET|safe }}
 	{% if locale %}
 	<script>
 		bablic.locale = "{{ locale }}";
