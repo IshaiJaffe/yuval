@@ -103,7 +103,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.media",
     "django.core.context_processors.static",
     "django.contrib.messages.context_processors.messages",
-    "sites.cms_processor")
+    "sites.cms_processor",
+	"sites.context_processors.bablic")
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
